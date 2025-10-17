@@ -169,7 +169,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.12.1</version>
+                <version>3.2.2</version>
             </plugin>
 
             <plugin>
@@ -216,7 +216,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>3.12.1</version>
+                <version>3.2.2</version>
                 <executions>
                     <execution>
                         <id>generate-xref</id>
@@ -243,4 +243,5 @@
         </repository>
     </repositories>
 </project>
+
 
