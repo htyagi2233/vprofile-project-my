@@ -113,20 +113,23 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- MISSING / NEW dependencies -->
+        <!-- ========== MISSING / NEW dependencies ========== -->
 
+        <!-- Spring AMQP (for org.springframework.amqp.*) -->
         <dependency>
             <groupId>org.springframework.amqp</groupId>
             <artifactId>spring-rabbit</artifactId>
             <version>1.7.9.RELEASE</version>
         </dependency>
 
+        <!-- RabbitMQ client library -->
         <dependency>
             <groupId>com.rabbitmq</groupId>
             <artifactId>amqp-client</artifactId>
             <version>5.12.0</version>
         </dependency>
 
+        <!-- Elasticsearch transport client -->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>transport</artifactId>
@@ -138,12 +141,14 @@
             <version>6.8.20</version>
         </dependency>
 
+        <!-- Google Gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
         </dependency>
 
+        <!-- SpyMemcached client -->
         <dependency>
             <groupId>net.spy</groupId>
             <artifactId>spymemcached</artifactId>
@@ -165,13 +170,12 @@
                     </webApp>
                 </configuration>
             </plugin>
-
+            <!-- CODE COVERAGE -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.2</version>
             </plugin>
-
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -194,6 +198,7 @@
                 </executions>
             </plugin>
 
+            <!-- Added encoding config -->
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>2.6</version>
@@ -201,7 +206,6 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
@@ -212,23 +216,6 @@
                 </configuration>
             </plugin>
 
-            <!-- ✅ Added maven-jxr-plugin for XRef generation -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-                <version>3.2.2</version>
-                <executions>
-                    <execution>
-                        <id>generate-xref</id>
-                        <phase>site</phase>
-                        <goals>
-                            <goal>jxr</goal>
-                            <goal>test-jxr</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
         </plugins>
     </build>
 
@@ -237,11 +224,11 @@
             <id>${NEXUS-GRP-REPO}</id>
             <url>http://${NEXUSIP}:${NEXUSPORT}/repository/${NEXUS-GRP-REPO}/</url>
         </repository>
+        <!-- Also add Maven Central fallback -->
         <repository>
             <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
         </repository>
     </repositories>
 </project>
-
 
